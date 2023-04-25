@@ -39,3 +39,8 @@ class MeterStats():
         return min(valid_readings, key=lambda x: x["VALUE"])
     
     
+    def most_recent_reading(self) -> Dict[str, Union[str, float, datetime]]: # returning a dictionary
+       return max(self.parsed_data, key=lambda x: x["DATE"])
+        
+    
+    
