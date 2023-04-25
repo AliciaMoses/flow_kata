@@ -51,11 +51,11 @@ class TestFlowProcessor(unittest.TestCase):
         mock_meter_stats.assert_called_once_with(mock_data_parser.return_value.parse_data.return_value)
 
         mock_console_reporter.assert_called_once_with(mock_meter_stats.return_value)
-        mock_console_reporter.return_value.print_count_of_meters.assert_called_once()
+        mock_console_reporter.return_value.print_meter_count.assert_called_once()
         mock_console_reporter.return_value.print_sum_valid_readings.assert_called_once()
         mock_console_reporter.return_value.print_sum_invalid_readings.assert_called_once()
         mock_console_reporter.return_value.print_highest_lowest_readings.assert_called_once()
-        mock_console_reporter.return_value.print_most_recent_oldest_readings.assert_called_once()
+        mock_console_reporter.return_value.print_most_least_recent_readings.assert_called_once()
         
   
         
