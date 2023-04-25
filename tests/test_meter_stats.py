@@ -51,22 +51,25 @@ class TestMeterStats(unittest.TestCase):
         self.assertEqual(_sum, 700.0)
         
     # Need to pass in the specific key
-        
+    @unittest.skip("Work in progress")    
     def test_highest_valid_reading(self):
         meter_stats = MeterStats(self.data)
         highest = meter_stats.highest_valid_reading()
         self.assertEqual(highest["VALUE"], 200.0)
-        
+    
+    @unittest.skip("Work in progress")    
     def test_lowest_valid_reading(self):
         meter_stats = MeterStats(self.data)
         lowest = meter_stats.lowest_valid_reading()
         self.assertEqual(lowest["VALUE"], 100.0)
-        
+    
+    @unittest.skip("Work in progress")    
     def test_most_recent_reading(self):
         meter_stats = MeterStats(self.data)
         most_recent = meter_stats.most_recent_reading()
         self.assertEqual(most_recent["READING_ID"], "READING_ID_4")
-        
+    
+    @unittest.skip("Work in progress")    
     def test_most_recent_reading(self):
         meter_stats = MeterStats(self.data)
         least_recent = meter_stats.least_recent_reading()

@@ -15,7 +15,8 @@ class MeterStats():
         return len(set([data["METER_ID"] for data in self.parsed_data]))
     
     def sum_valid_readings(self) -> float:
-        return 300.0
+        return sum([data["VALUE"] for data in self.parsed_data if 
+                    isinstance(data["VALUE"], (int, float)) and data["STATUS"] == "V"])
     
     def sum_invalid_readings(self) -> float:
         return 700.0
