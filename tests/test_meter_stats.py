@@ -51,7 +51,7 @@ class TestMeterStats(unittest.TestCase):
         self.assertEqual(_sum, 700.0)
         
     # Need to pass in the specific key
-    @unittest.skip("Work in progress")    
+   
     def test_highest_valid_reading(self):
         meter_stats = MeterStats(self.data)
         highest = meter_stats.highest_valid_reading()

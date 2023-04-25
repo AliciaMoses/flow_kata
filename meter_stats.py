@@ -22,4 +22,12 @@ class MeterStats():
          return sum([data["VALUE"] for data in self.parsed_data if 
                     isinstance(data["VALUE"], (int, float)) and data["STATUS"] == "F"])
     
+    # For this method I will be returning a dictionary with the specified data types within it
+    def highest_valid_reading(self) -> Dict[str, Union[str, float, datetime]]:
+        # Define valid readings(same logic as before)
+        valid_readings = [data for data in self.parsed_data if data["STATUS"] == "V"]
+        # return the max value from above
+        # Here I need to use a hidden function to handle accessing the correct key
+        return max(valid_readings, key=lambda x: x["VALUE"])
+    
     
