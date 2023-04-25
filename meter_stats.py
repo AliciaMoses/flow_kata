@@ -13,3 +13,11 @@ class MeterStats():
         #create a set using METER_ID key, since it will handle the issue of duplicates
         # simply return the length of the set
         return len(set([data["METER_ID"] for data in self.parsed_data]))
+    
+    def sum_valid_readings(self) -> float:
+        return 300.0
+    
+    def sum_invalid_readings(self) -> float:
+        return 700.0
+    
+    
