@@ -6,4 +6,5 @@ class ConsoleReporter():
         self.meter_stats = meter_stats
         
     def print_meter_count(self):
-        print("Count of meters:", 2)
+        meter_count = self.meter_stats.count_meters()
+        print("Count of meters:", meter_count)
