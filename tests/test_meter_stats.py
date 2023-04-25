@@ -57,7 +57,7 @@ class TestMeterStats(unittest.TestCase):
         highest = meter_stats.highest_valid_reading()
         self.assertEqual(highest["VALUE"], 200.0)
     
-    @unittest.skip("Work in progress")    
+     
     def test_lowest_valid_reading(self):
         meter_stats = MeterStats(self.data)
         lowest = meter_stats.lowest_valid_reading()

@@ -30,4 +30,12 @@ class MeterStats():
         # Here I need to use a hidden function to handle accessing the correct key
         return max(valid_readings, key=lambda x: x["VALUE"])
     
+      # For this method I will be returning a dictionary with the specified data types within it
+    def lowest_valid_reading(self) -> Dict[str, Union[str, float, datetime]]:
+        # Define invalid readings(same logic as before)
+        valid_readings = [data for data in self.parsed_data if data["STATUS"] == "V"]
+        # return the min value from above
+        # Here I need to use a hidden function to handle accessing the correct key
+        return min(valid_readings, key=lambda x: x["VALUE"])
+    
     
