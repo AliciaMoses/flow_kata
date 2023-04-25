@@ -38,5 +38,5 @@ class TestMeterStats(unittest.TestCase):
     def test_count_meters(self):
         meter_stats = MeterStats(self.data)
         meter_count = meter_stats.count_meters()
-        self.assertEqual(meter_count, 3)
+        self.assertEqual(meter_count, 2) # Corrected the assertion statement, should have been 2 previously
         

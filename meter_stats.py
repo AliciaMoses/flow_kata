@@ -8,5 +8,8 @@ class MeterStats():
         self.parsed_data = parsed_data
         
     # will specify that this function returns an int value
+    
     def count_meters(self) -> int:
-        return 3
+        #create a set using METER_ID key, since it will handle the issue of duplicates
+        # simply return the length of the set
+        return len(set([data["METER_ID"] for data in self.parsed_data]))
