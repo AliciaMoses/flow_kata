@@ -66,7 +66,7 @@ class TestConsoleReporter(unittest.TestCase):
         mock_print.assert_any_call("Lowest valid meter reading:", self.sample_data[0])
         
     @patch('builtins.print')
-    def test_print_most_least__recent_readings(self, mock_print):
+    def test_print_most_least_recent_readings(self, mock_print):
         self.console_reporter.print_most_least_recent_readings()
         # assert either is called
         mock_print.assert_any_call("Most recent meter reading:", self.sample_data[2])
