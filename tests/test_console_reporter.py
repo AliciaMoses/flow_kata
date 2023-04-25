@@ -32,7 +32,7 @@ class TestConsoleReporter(unittest.TestCase):
             {
                 "METER_ID": "METER_ID_2",
                 "READING_ID": "READING_ID_3",
-                "VALUE": 200.0,
+                "VALUE": 400.0,
                 "DATE": datetime(2023, 4, 5),
                 "STATUS": "V",
             },
@@ -46,3 +46,28 @@ class TestConsoleReporter(unittest.TestCase):
         self.console_reporter.print_meter_count()
         # determine the console output
         mock_print.assert_called_once_with("Count of meters:", 2)
+        
+    @patch('builtins.print')
+    def test_print_sum_valid_readings(self, mock_print):
+        self.console_reporter.print_sum_valid_readings()
+        mock_print.assert_called_once_with("Sum of valid meter readings:", 500.0)
+
+    @patch('builtins.print')
+    def test_print_sum_invalid_readings(self, mock_print):
+        self.console_reporter.print_sum_invalid_readings()
+        mock_print.assert_called_once_with("Sum of invalid meter readings:", 200.0)
+        
+    # these will be printed together    
+    @patch('builtins.print')
+    def test_print_highest_lowest_readings(self, mock_print):
+        self.console_reporter.print_highest_lowest_readings()
+        # assert either is called
+        mock_print.assert_any_call("Highest valid meter reading:", self.sample_data[2])
+        mock_print.assert_any_call("Lowest valid meter reading:", self.sample_data[0])
+        
+    @patch('builtins.print')
+    def test_print_most_least__recent_readings(self, mock_print):
+        self.console_reporter.print_most_least_recent_readings()
+        # assert either is called
+        mock_print.assert_any_call("Most recent meter reading:", self.sample_data[2])
+        mock_print.assert_any_call("Least recent meter reading:", self.sample_data[0])
