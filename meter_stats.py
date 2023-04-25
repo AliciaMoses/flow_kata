@@ -42,5 +42,6 @@ class MeterStats():
     def most_recent_reading(self) -> Dict[str, Union[str, float, datetime]]: # returning a dictionary
        return max(self.parsed_data, key=lambda x: x["DATE"])
         
-    
-    
+    # I can use the same logic but for the min instead of max
+    def least_recent_reading(self) -> Dict[str, Union[str, float, datetime]]: # returning a dictionary
+       return min(self.parsed_data, key=lambda x: x["DATE"])

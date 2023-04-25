@@ -69,8 +69,9 @@ class TestMeterStats(unittest.TestCase):
         most_recent = meter_stats.most_recent_reading()
         self.assertEqual(most_recent["READING_ID"], "READING_ID_4")
     
-    @unittest.skip("Work in progress")    
-    def test_most_recent_reading(self):
+    # corrected error in test function name here
+
+    def test_least_recent_reading(self):
         meter_stats = MeterStats(self.data)
         least_recent = meter_stats.least_recent_reading()
         self.assertEqual(least_recent["READING_ID"], "READING_ID_1")
